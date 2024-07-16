@@ -1,0 +1,17 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+    background-color: #2980b9;
+    width: 100%;
+    color: white;
+}
+
+.name{
+padding-left: 50px;
+}
+
+.home-btn{
+    padding-right: 50px;
+
+}
+
