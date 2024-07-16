@@ -1,5 +1,6 @@
 <?php
 include '../utils/db.php';
+include 'assets/logik.php';
 
 
 
@@ -18,7 +19,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['answer'])) {
     <title>Quiz</title>
     <link rel="stylesheet" href="header.css">   
     <link rel="stylesheet" href="style.css">
-
 </head>
 
 
@@ -51,8 +51,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['answer'])) {
     </form>
 </div>
 
-<script>
 
+<script>
     // alle radio buttons werden im Formular ausgewählt.
 document.addEventListener('DOMContentLoaded', function() {
     const form = document.getElementById('quizForm');
