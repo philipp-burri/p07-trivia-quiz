@@ -84,25 +84,25 @@ if (!isset($_SESSION)) {
         background-color: #2980b9;
         color: white;
         border: none;
-        border-radius: 4px;
-        font-size: 16px;
-        cursor: pointer;
-        transition: background-color 0.3s;
-    }
+        border-radius:uestions.php
     button[type="submit"]:hover {
         background-color: #3498db;
-    }
+    }}
 </style>
 </head>
+<?php
 
+
+?>
 
 <body>
+<?php prettyPrint($_SESSION['question_id']); ?>
+
 <div class="quiz-container">
     <div class="question">
         <h2><?php echo htmlspecialchars($questionText); ?></h2>
     </div>
 
-    <?php prettyPrint($type); ?>
 
     <form id="quizForm" method="post">
         <div class="answer-container">

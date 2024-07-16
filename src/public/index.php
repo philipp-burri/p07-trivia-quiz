@@ -4,6 +4,8 @@ if (!isset($_SESSION)) {
     session_start();
 }
 
+session_unset();
+
 prettyPrint($_SESSION);
 ?>
 

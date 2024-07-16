@@ -13,18 +13,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 $type = $_SESSION['type'];
 
-
-$query = "SELECT * FROM questions WHERE type = '$type' ORDER BY RAND() LIMIT 1";
+if (!isset($_SESSION['question_id'])){
+$query = "SELECT id FROM questions WHERE type = '$type' ORDER BY RAND() LIMIT 10";
 $stmt = $dbConnection->prepare($query);
 $stmt->execute();
-$question = $stmt->fetch(PDO::FETCH_ASSOC);
+$question = $stmt->fetchAll(PDO::FETCH_ASSOC);
+$questionIds = array_column($question, 'id');
+$_SESSION['question_id']= "$questionIds[0]";
+}
 
+$idcount= 0;
 
-//foreach loop probieren
-if ($question) {
-    $questionText = htmlspecialchars($question['question']);
-    $answerA = htmlspecialchars($question['answer_a']);
-    $answerB = htmlspecialchars($question['answer_b']);
-    $answerC = htmlspecialchars($question['answer_c']);
-    $answerD = htmlspecialchars($question['answer_d']);
+$query = "SELECT * FROM questions WHERE id = '$questionIds[$idcount]'";
+$stmt = $dbConnection->prepare($query);
+$stmt->execute();
+$singlequestion = $stmt->fetch(PDO::FETCH_ASSOC);
+
+if ($singlequestion) {
+    $questionText = htmlspecialchars($singlequestion['question']);
+    $answerA = htmlspecialchars($singlequestion['answer_a']);
+    $answerB = htmlspecialchars($singlequestion['answer_b']);
+    $answerC = htmlspecialchars($singlequestion['answer_c']);
+    $answerD = htmlspecialchars($singlequestion['answer_d']);
 }
