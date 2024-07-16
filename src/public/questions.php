@@ -1,13 +1,6 @@
 <?php
-include '../utils/db.php';
+include 'db.php';
 
-
-
-$message = '';
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['answer'])) {
-
-
-}
 ?>
 
 <!DOCTYPE html>

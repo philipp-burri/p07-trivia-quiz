@@ -1,4 +1,19 @@
 <?php
+function prettyPrint($a){
+    echo '<pre>';
+    print_r($a);
+    echo '</pre>';
+}
+
+prettyPrint($_POST['categories']);
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $type = trim($_POST['categories']);
+    
+}
+
+prettyPrint($type);
+
 
 $db_host = getenv("DB_HOST");
 $db_name = getenv("DB_NAME");
@@ -13,7 +28,6 @@ echo "Connected successfully";
 echo $e->getMessage();
 
 }
-$type="animals";
 
 $query = 'SELECT * FROM questions WHERE type = :type ORDER BY RAND() LIMIT 1';
 $stmt = $dbConnection->prepare($query);
@@ -30,4 +44,8 @@ $answerB = htmlspecialchars($question['answer_b']);
 $answerC = htmlspecialchars($question['answer_c']);
 $answerD = htmlspecialchars($question['answer_d']);
 }
+/* header("Location: questions.php"); */
+
+
+
 ?>
