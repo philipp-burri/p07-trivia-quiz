@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: mysql
--- Generation Time: Jul 15, 2024 at 12:20 PM
+-- Generation Time: Jul 16, 2024 at 09:53 AM
 -- Server version: 9.0.0
 -- PHP Version: 8.2.8
 
@@ -29,13 +29,13 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `questions` (
   `id` int NOT NULL,
-  `question` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `type` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `answer_a` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `answer_b` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `answer_c` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `answer_d` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `correct_answer` char(1) COLLATE utf8mb4_unicode_ci NOT NULL
+  `question` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `type` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `answer_a` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `answer_b` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `answer_c` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `answer_d` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `correct_answer` char(1) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -54,7 +54,7 @@ INSERT INTO `questions` (`id`, `question`, `type`, `answer_a`, `answer_b`, `answ
 (9, 'Wie lang ist die Chinesische Mauer (gerundet)?', 'geography', '12.000 Kilometer', '15.000 Kilometer', '18.000 Kilometer', '21.000 Kilometer', 'd'),
 (10, 'Zu welchem Land gehört Grönland politisch?', 'geography', 'Norwegen', 'USA', 'Island', 'Dänemark', 'd'),
 (11, 'Wo befindet sich der größte Vulkan der Erde?', 'geography', 'Hawaii', 'Indonesien', 'Chile', 'Island', 'a'),
-(12, 'Wie heißt das kleinste Land der Welt?', 'geography', 'Monaco', 'Die Vatikanstadt', 'San Marino', 'Nauru', 'b'),
+(12, 'Wie heißt das kleinste Land der Welt?', 'geography', 'Monaco', 'Vatikanstadt', 'San Marino', 'Nauru', 'b'),
 (13, 'Wie heißt der längste Fluss der welt?', 'geography', 'Nil', 'Amazonas', 'Jangtsekiang', 'Missouri', 'a'),
 (14, 'Was ist der flächenmäßig größte US-Bundesstaat?', 'geography', 'Kalifornien', 'Texas', 'Alaska', 'Montana', 'c'),
 (15, 'Zu welchem ​​Land gehören die Kanarischen Inseln?', 'geography', 'Portugal', 'Frankreich', 'Spanien', 'Italien', 'c'),
@@ -102,7 +102,27 @@ INSERT INTO `questions` (`id`, `question`, `type`, `answer_a`, `answer_b`, `answ
 (217, 'Welches Tier hat den längsten Hals?', 'animals', 'Elefant', 'Giraffe', 'Strauß', 'Kamel', 'b'),
 (218, 'Welches Tier ist für seine Fähigkeit bekannt, Elektrizität zu erzeugen?', 'animals', 'Zitterrochen', 'Delfin', 'Seepferdchen', 'Aal', 'a'),
 (219, 'Welches Tier lebt in Australien und trägt seine Jungen in einem Beutel?', 'animals', 'Koala', 'Panda', 'Löwe', 'Tiger', 'a'),
-(220, 'Welches Tier lebt in Kolonien und hat eine Königin?', 'animals', 'Biene', 'Spinne', 'Vogel', 'Schildkröte', 'a');
+(220, 'Welches Tier lebt in Kolonien und hat eine Königin?', 'animals', 'Biene', 'Spinne', 'Vogel', 'Schildkröte', 'a'),
+(300, 'Wer war der Trainer der Schweizer Nationalmannschaft während der FIFA-Weltmeisterschaft 1994?', 'Fussball', 'Georg Bregy', 'Köbi Kuhn', 'Roy Hodgson', 'Ottmar Hitzfeld', 'c'),
+(301, 'Welcher Schweizer Spieler erzielte das erste Tor der Mannschaft bei der UEFA Euro 1996?', 'Fussball', 'Alex Frei', 'Kubilay Türkyilmaz', 'Stephan Chapuisat', 'Georg Bregy', 'b'),
+(302, 'In welchem Jahr qualifizierte sich die Schweiz zum ersten Mal nach einer langen Pause wieder für die FIFA-Weltmeisterschaft?', 'Fussball', '1986', '1990', '1994', '1998', 'c'),
+(303, 'Wie weit kam die Schweizer Nationalmannschaft bei der UEFA Euro 2008, die in der Schweiz und Österreich stattfand?', 'Fussball', 'Gar nicht an die EM', 'Gruppenphase', 'Viertelfinale', 'Finale', 'b'),
+(304, 'Welcher Spieler erzielte den entscheidenden Treffer gegen Spanien in der Gruppenphase der FIFA-Weltmeisterschaft 2010?', 'Fussball', 'Gelson Fernandes', 'Admir Mehmedi', 'Alex Frei', 'Mauro Lustrinelli', 'a'),
+(305, 'In welchem Jahr erreichte die Schweizer Nationalmannschaft erstmals das Achtelfinale einer FIFA-Weltmeisterschaft?', 'Fussball', '1986', '1990', '1994', '1998', 'c'),
+(306, 'Welcher Schweizer Spieler wurde bei der FIFA-Weltmeisterschaft 2018 ins All-Star-Team gewählt?', 'Fussball', 'Keiner ', '1', '2', '3', 'a'),
+(307, 'Wie viele Tore erzielte die Schweiz in ihrem höchsten Sieg bei einer FIFA-Weltmeisterschaft?', 'Fussball', '3', '4', '5', '6', 'b'),
+(308, 'Wer war der Trainer der Schweizer Nationalmannschaft während der UEFA Euro 2016?', 'Fussball', 'Kübi Kuhn', 'Jürgen Klopp', 'Ottmar Hitzfeld', 'Vladimir Petković', 'd'),
+(309, 'Welcher Schweizer Spieler erzielte das entscheidende Tor im Elfmeterschießen gegen Frankreich bei der UEFA Euro 2020?', 'Fussball', 'Granit Xhaka', 'Ruben Vargas', 'Haris Seferović', 'Admir Mehmedi', 'b'),
+(310, 'In welchem Jahr gewann die Schweiz die FIFA U-17-Weltmeisterschaft?', 'Fussball', '2005', '2009', '2013', '2017', 'b'),
+(311, 'Wer erzielte das entscheidende Tor für die Schweiz im Playoff-Spiel gegen Nordirland, das ihnen die Qualifikation für die FIFA-Weltmeisterschaft 2018 sicherte?', 'Fussball', 'Ricardo Rodriguez (Elfmeter)', 'Xherdan Shaqiri (Elfmeter)', 'Haris Seferović (Elfmeter)', 'Manuel Akanji (Elfmeter)', 'a'),
+(312, 'Wie viele Tore erzielte Haris Seferovic bei der UEFA Nations League 2018/19?', 'Fussball', '3', '4', '5', '6', 'c'),
+(313, 'Welcher Schweizer Torhüter hielt den entscheidenden Elfmeter im Spiel gegen Frankreich bei der UEFA Euro 2020?', 'Fussball', 'Diego Benaglio', 'Uwe Still', 'Gregor Kobel', 'Yann Sommer', 'd'),
+(314, 'Wie viele Male hat die Schweiz in den letzten 30 Jahren die Gruppenphase einer FIFA-Weltmeisterschaft überstanden?', 'Fussball', '1 Mal', '2 Mal', '3 Mal', '4 Mal', 'd'),
+(315, 'Welcher Schweizer Trainer führte die Mannschaft zur FIFA-Weltmeisterschaft 2018?', 'Fussball', 'Vladimir Petković', 'Ottmar Hitzfeld', 'Kübi Kuhn', 'Murat Yakin', 'a'),
+(316, 'Wer erzielte das erste Tor der Schweiz bei der UEFA Euro 2020?', 'Fussball', 'Granit Xhaka', 'Breel Embolo', 'Mario Gavranovic', 'Remo Freuler', 'b'),
+(317, 'Gegen welche Mannschaft verlor die Schweiz im Viertelfinale der UEFA Euro 2020, nachdem das Spiel nach 120 Minuten 1:1 endete und im Elfmeterschießen entschieden wurde?', 'Fussball', 'Spanien', 'Italien', 'England', 'Deutschland', 'a'),
+(318, 'Gegen welche Mannschaft verlor die Schweiz im Achtelfinale der FIFA Weltmeisterschaft 2006 in Deutschland?', 'Fussball', 'Deutschland', 'Ukraine', 'Holland', 'Frankreich', 'b'),
+(319, 'Wer ist der aktuelle Trainer der Schweizer Nationalmannschaft?', 'Fussball', 'Hakan Yakin', 'Murat Yakin', 'Gökan Yakin', 'Türklimatz Yakin', 'b');
 
 --
 -- Indexes for dumped tables
@@ -122,7 +142,7 @@ ALTER TABLE `questions`
 -- AUTO_INCREMENT for table `questions`
 --
 ALTER TABLE `questions`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=221;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=320;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
