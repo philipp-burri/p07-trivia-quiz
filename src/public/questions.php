@@ -1,5 +1,8 @@
 <?php
-include 'db.php';
+include 'assets/logik.php';
+if (!isset($_SESSION)) {
+    session_start();
+}
 
 ?>
 
@@ -98,6 +101,8 @@ include 'db.php';
     <div class="question">
         <h2><?php echo htmlspecialchars($questionText); ?></h2>
     </div>
+
+    <?php prettyPrint($type); ?>
 
     <form id="quizForm" method="post">
         <div class="answer-container">

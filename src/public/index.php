@@ -1,6 +1,10 @@
 <?php
-include 'db.php';
+include '../utils/db.php';
+if (!isset($_SESSION)) {
+    session_start();
+}
 
+prettyPrint($_SESSION);
 ?>
 
 <!DOCTYPE html>
@@ -26,7 +30,7 @@ include 'db.php';
 
 
 
-<form action="db.php" method="post">
+<form action="assets/logik.php" method="post">
         <label for="">Thema:</label>
         <select id="categories" name="categories">
             <option value="animals">Animals</option>
