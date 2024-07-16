@@ -8,7 +8,7 @@ $db_pass = getenv("DB_PASSWORD");
 try {
 $dbConnection = new PDO("mysql:host=$db_host;dbname=$db_name", $db_user, $db_pass);
 $dbConnection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-echo "Connected successfully";
+
 } catch (PDOException $e) {
 echo $e->getMessage();
 
