@@ -19,7 +19,7 @@ include '../utils/db.php';
 
 <?php include '../utils/header.php' ?>
 
-
+<div class="dropdown-menu">
 <form action="assets/logik.php" method="post">
         <label for="">Thema:</label>
         <select id="categories" name="categories">
@@ -32,7 +32,7 @@ include '../utils/db.php';
 
         <button type="submit">Senden</button>
     </form>
-
+</div>
 
 <!-- <div class="dropdown-menu">
 
