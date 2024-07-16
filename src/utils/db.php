@@ -13,15 +13,16 @@ echo "Connected successfully";
 echo $e->getMessage();
 
 }
+$type="animals";
 
-// SQL-Abfrage für eine zufällige Frage
-$query = 'SELECT * FROM questions ORDER BY RAND() LIMIT 1';
+$query = 'SELECT * FROM questions WHERE type = :type ORDER BY RAND() LIMIT 1';
 $stmt = $dbConnection->prepare($query);
+$stmt->bindParam(':type', $type, PDO::PARAM_STR);
 $stmt->execute();
 $question = $stmt->fetch(PDO::FETCH_ASSOC);
 
-// Überprüfung, ob eine Frage gefunden wurde
-//for
+
+//foreach loop probieren
 if ($question) {
 $questionText = htmlspecialchars($question['question']);
 $answerA = htmlspecialchars($question['answer_a']);
