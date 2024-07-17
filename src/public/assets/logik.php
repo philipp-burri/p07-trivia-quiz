@@ -32,7 +32,7 @@ if (!isset($_SESSION['questionIndex'])){
 }
 
 
-$questionIndex = $_SESSION['questiosinglequestionnIndex'];
+$questionIndex = $_SESSION['questionIndex'];
 
 
 $questionId= $questionIds[$questionIndex];
