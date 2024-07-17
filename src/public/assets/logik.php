@@ -5,29 +5,66 @@ if (!isset($_SESSION)) {
 
 include '../utils/db.php';
 
+// Fragt ab ob dir Kategorie im Post hinterlegt ist, speichert diese in der Session und leitet den User aus die Fragen Seite weiter..
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($_POST['categories']){
     $_SESSION['type'] = $_POST['categories'];
 }header("Location: ../questions.php");
 }
-
+// Setzt dir Kategorie aus der Session in die Type Variabel
 $type = $_SESSION['type'];
 
-if (!isset($_SESSION['question_id'])){
+// Falls noch keine QuestionId in der Session existiert wird diese aus der DB ausgelesen (und in ein eindimensionales Array gewandelt) und in der Session hinterlegt
+if (!isset($_SESSION['questionIds'])){
 $query = "SELECT id FROM questions WHERE type = '$type' ORDER BY RAND() LIMIT 10";
 $stmt = $dbConnection->prepare($query);
 $stmt->execute();
 $question = $stmt->fetchAll(PDO::FETCH_ASSOC);
 $questionIds = array_column($question, 'id');
-$_SESSION['question_id']= "$questionIds[0]";
+$_SESSION['questionIds']= $questionIds;
 }
 
-$idcount= 0;
+$questionIds= $_SESSION['questionIds'];
 
-$query = "SELECT * FROM questions WHERE id = '$questionIds[$idcount]'";
+if (!isset($_SESSION['questionIndex'])){
+    $_SESSION['questionIndex'] = 0;
+}
+
+
+$questionIndex = $_SESSION['questiosinglequestionnIndex'];
+
+
+$questionId= $questionIds[$questionIndex];
+
+
+$query = "SELECT * FROM questions WHERE id = $questionId";
 $stmt = $dbConnection->prepare($query);
 $stmt->execute();
 $singlequestion = $stmt->fetch(PDO::FETCH_ASSOC);
+
+if (!isset($_SESSION['points'])) {
+    $_SESSION['points']= 0;   
+}
+
+if (isset($_POST['answer'])) {
+    $_SESSION['answer']= $_POST['answer'];
+    $_SESSION['correctAnswer']= $singlequestion['correct_answer'];
+    $givenAnswer= $_SESSION['answer'];
+    $correctAnswer= $_SESSION['correctAnswer'];
+    if ($givenAnswer== $correctAnswer){
+        $_SESSION['points']+= 1;
+    }
+    
+    if ($_SESSION['questionIndex'] <= 8){
+    $_SESSION['questionIndex'] ++;     
+    }else{
+        header("Location: ../result.php");
+    }
+}
+
+prettyPrint($_SESSION['points']);
+/* prettyPrint($_SESSION['correctAnswer']); */
 
 if ($singlequestion) {
     $questionText = htmlspecialchars($singlequestion['question']);

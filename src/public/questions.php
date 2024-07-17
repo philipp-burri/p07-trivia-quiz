@@ -38,8 +38,7 @@ if (!isset($_SESSION)) {
         margin-bottom: 20px;
         color: #2c3e50;
     }
-    .answer-container {
-    }
+
     .answer {
         margin-bottom: 10px;
     }
@@ -56,8 +55,7 @@ if (!isset($_SESSION)) {
     }
     .answer label:hover {
         background-color: #d5dbdb;
-    }
-    .answer input[type="radio"]:checked + label {
+
         background-color: #3498db;
         color: white;
     }
@@ -96,7 +94,6 @@ if (!isset($_SESSION)) {
 ?>
 
 <body>
-<?php prettyPrint($_SESSION['question_id']); ?>
 
 <div class="quiz-container">
     <div class="question">
