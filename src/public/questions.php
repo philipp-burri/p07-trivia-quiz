@@ -26,22 +26,15 @@ if (!isset($_SESSION)) {
 
     <form id="quizForm" method="post">
         <div class="answer-container">
-            <div class="answer">
-                <input type="radio" name="answer" id="answerA" value="a" required>
-                <label for="answerA"><?php echo htmlspecialchars($answerA); ?></label>
-            </div>
-            <div class="answer">
-                <input type="radio" name="answer" id="answerB" value="b" required>
-                <label for="answerB"><?php echo htmlspecialchars($answerB); ?></label>
-            </div>
-            <div class="answer">
-                <input type="radio" name="answer" id="answerC" value="c" required>
-                <label for="answerC"><?php echo htmlspecialchars($answerC); ?></label>
-            </div>
-            <div class="answer">
-                <input type="radio" name="answer" id="answerD" value="d" required>
-                <label for="answerD"><?php echo htmlspecialchars($answerD); ?></label>
-            </div>
+        <div class="answer-container">
+            <?php foreach ($answer_keys as $key): ?>
+                <div class="answer">
+                    
+                    <input type="radio" name="answer" id="answer<?php echo strtoupper($key); ?>" value="<?php echo $key; ?>" required>
+                    <label for="answer<?php echo strtoupper($key); ?>"><?php echo htmlspecialchars($shuffled_answers[$key]); ?></label>
+
+                </div>
+            <?php endforeach; ?>    
         </div>
     </form>
 </div>
