@@ -10,17 +10,21 @@ include '../utils/db.php';
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($_POST['categories']){
     $_SESSION['type'] = $_POST['categories'];
+    if ($_POST['amount']){
+        $_SESSION['amount'] = $_POST['amount'];
+    }
 }header("Location: ../questions.php");
 }
 // Setzt dir Kategorie aus der Session in die Type Variabel
 $type = $_SESSION['type'];
+$amount= $_SESSION['amount'];
 
 // Falls noch keine QuestionId in der Session existiert wird diese aus der DB ausgelesen (und in ein eindimensionales Array gewandelt) und in der Session hinterlegt
 if (!isset($_SESSION['questionIds'])){
     if ($type != 'mixed'){
-    $query = "SELECT id FROM questions WHERE type = '$type' ORDER BY RAND() LIMIT 10";
+    $query = "SELECT id FROM questions WHERE type = '$type' ORDER BY RAND() LIMIT $amount";
     }else{
-    $query = "SELECT id FROM questions ORDER BY RAND() LIMIT 10";
+    $query = "SELECT id FROM questions ORDER BY RAND() LIMIT $amount";
     }
 $stmt = $dbConnection->prepare($query);
 $stmt->execute();
@@ -50,6 +54,7 @@ if (!isset($_SESSION['points'])) {
     $_SESSION['points']= 0;   
 }
 
+$amountIndex= $amount- 2;
 if (isset($_POST['answer'])) {
     $_SESSION['answer']= $_POST['answer'];
     $_SESSION['correctAnswer']= $singlequestion['correct_answer'];
@@ -59,15 +64,13 @@ if (isset($_POST['answer'])) {
         $_SESSION['points']+= 1;
     }
     
-    if ($_SESSION['questionIndex'] <= 8){
+    if ($_SESSION['questionIndex'] <= $amountIndex){
     $_SESSION['questionIndex'] ++;     
     }else{
         header("Location: ../result.php");
     }
 }
 
-prettyPrint($_SESSION['points']);
-/* prettyPrint($_SESSION['correctAnswer']); */
 
 if ($singlequestion) {
     $questionText = htmlspecialchars($singlequestion['question']);
