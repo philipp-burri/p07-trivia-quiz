@@ -32,6 +32,7 @@ session_unset();
             <option value="history">History</option>
             <option value="geography">Geography</option>
             <option value="football">Football</option>
+            <option value="mixed">Mixed</option>
 
         </select>
 

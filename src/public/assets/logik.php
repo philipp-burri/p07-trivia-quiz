@@ -17,14 +17,17 @@ $type = $_SESSION['type'];
 
 // Falls noch keine QuestionId in der Session existiert wird diese aus der DB ausgelesen (und in ein eindimensionales Array gewandelt) und in der Session hinterlegt
 if (!isset($_SESSION['questionIds'])){
-$query = "SELECT id FROM questions WHERE type = '$type' ORDER BY RAND() LIMIT 10";
+    if ($type != 'mixed'){
+    $query = "SELECT id FROM questions WHERE type = '$type' ORDER BY RAND() LIMIT 10";
+    }else{
+    $query = "SELECT id FROM questions ORDER BY RAND() LIMIT 10";
+    }
 $stmt = $dbConnection->prepare($query);
 $stmt->execute();
 $question = $stmt->fetchAll(PDO::FETCH_ASSOC);
 $questionIds = array_column($question, 'id');
 $_SESSION['questionIds']= $questionIds;
 }
-
 $questionIds= $_SESSION['questionIds'];
 
 if (!isset($_SESSION['questionIndex'])){
