@@ -32,7 +32,14 @@ session_unset();
             <option value="history">History</option>
             <option value="geography">Geography</option>
             <option value="football">Football</option>
+            <option value="mixed">Mixed</option>
 
+        </select>
+
+        <select id="amount" name="amount">
+            <option value="5">5</option>
+            <option value="10">10</option>
+            <option value="15">15</option>
         </select>
 
         <button type="submit">Senden</button>
