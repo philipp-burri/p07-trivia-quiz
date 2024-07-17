@@ -1,14 +1,9 @@
 <?php
-include '../utils/db.php';
 include 'assets/logik.php';
-
-
-
-$message = '';
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['answer'])) {
-
-
+if (!isset($_SESSION)) {
+    session_start();
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -20,7 +15,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['answer'])) {
     <link rel="stylesheet" href="header.css">   
     <link rel="stylesheet" href="style.css">
 </head>
+<?php
 
+
+?>
 
 <body>
 <?php include '../utils/header.php' ?>
@@ -28,6 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['answer'])) {
     <div class="question">
         <h2><?php echo htmlspecialchars($questionText); ?></h2>
     </div>
+
 
     <form id="quizForm" method="post">
         <div class="answer-container">
