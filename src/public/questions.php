@@ -15,10 +15,6 @@ if (!isset($_SESSION)) {
     <link rel="stylesheet" href="header.css">   
     <link rel="stylesheet" href="style.css">
 </head>
-<?php
-
-
-?>
 
 <body>
 <?php include '../utils/header.php' ?>
