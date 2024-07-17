@@ -39,6 +39,6 @@ session_unset();
     </form>
 </div>
 
-
+<?php include '../utils/footer.php'; ?>
 </body>
 </html>
