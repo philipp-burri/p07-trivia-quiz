@@ -1,4 +1,14 @@
 <?php
+if (!isset($_SESSION)) {
+    session_start();
+}
+function prettyPrint($a){
+    echo '<pre>';
+    print_r($a);
+    echo '</pre>';
+}
+
+/* prettyPrint($_POST['categories']); */
 
 
 $db_host = getenv("DB_HOST");
@@ -14,3 +24,5 @@ $dbConnection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 echo $e->getMessage();
 
 }
+
+

@@ -1,5 +1,10 @@
 <?php
 include '../utils/db.php';
+if (!isset($_SESSION)) {
+    session_start();
+}
+
+session_unset();
 
 ?>
 
@@ -34,25 +39,6 @@ include '../utils/db.php';
     </form>
 </div>
 
-<!-- <div class="dropdown-menu">
 
-<div class="container">
-        <h2>Select a Category</h2>
-        <form action="questions.php" method="get">
-            <input type="hidden" name="category" value="geography">
-            <button type="submit" class="category-button">Geography</button>
-        </form>
-        <form action="questions.php" method="get">
-            <input type="hidden" name="category" value="history">
-            <button type="submit" class="category-button">History</button>
-        </form>
-        <form action="questions.php" method="get">
-            <input type="hidden" name="category" value="science">
-            <button type="submit" class="category-button">Science</button>
-        </form>
- 
-    </div>
-</div>
- -->
 </body>
 </html>
