@@ -1,27 +1,7 @@
 <?php
-session_start();
 include 'assets/logik.php';
-
-// Holen der Variablen aus der Session
-$amount = isset($_SESSION['amount']) ? $_SESSION['amount'] : 0;
-$points = isset($_SESSION['points']) ? $_SESSION['points'] : 0;
-
-// Berechnung des Verhältnisses
-$ratio = $amount > 0 ? $points / $amount : 0;
-
-$result_image = '';
-$result_text = '';
-
-// Bestimmen des Ergebnisses basierend auf dem Verhältnis
-if ($ratio >= 0 && $ratio < 0.3333) {
-    $result_image = '/assets/img/traurig.jpeg';
-    $result_text = 'Leider hast du weniger als ein Drittel der Fragen richtig beantwortet. Versuche es noch einmal!';
-} elseif ($ratio >= 0.3333 && $ratio < 0.6667) {
-    $result_image = '/assets/img/mittel.jpeg';
-    $result_text = 'Du hast ein Drittel bis zwei Drittel der Fragen richtig beantwortet. Gut gemacht!';
-} else {
-    $result_image = '/assets/img/happy.jpeg';
-    $result_text = 'Herzlichen Glückwunsch! Du hast mehr als zwei Drittel der Fragen richtig beantwortet!';
+if (!isset($_SESSION)) {
+    session_start();
 }
 ?>
 
