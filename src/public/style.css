@@ -2,6 +2,7 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0 auto;
     
+    
 }
 a{
     text-decoration: none;
@@ -22,13 +23,67 @@ h1 {
     margin-left: 500px;
     margin-right: 500px;
 }
+.quiz-container1 {
+    
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    /* margin-left: auto;
+    margin-right:auto; */
+}
+.quiz-container2 {
+    display: flex;
+    max-width: 900px;
+    justify-content: center;
+    text-align: center;
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    /* margin: 50px; */
+    flex-wrap: wrap;
+    /* margin-left: auto;
+    margin-right:auto; */
+}
+.quiz-container3{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    
+    margin-top: 150px;
+    margin-bottom: auto;
+}
+.quiz-container4{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
 .question {
     font-weight: bold;
     font-size: 18px;
     margin-bottom: 20px;
     color: #2c3e50;
 }
-.answer {
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    width: 120px;
+    color: white;
+    background-color: #3498db;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    text-decoration: none;
+}
+.btn:hover {
+    background-color: #45a049;
+}
+    .answer {
     margin-bottom: 10px;
     border-color: black;
     border: solid 1px;
@@ -61,7 +116,7 @@ h1 {
     border-radius: 4px;
 }
 .message.correct {
-    background-color: #2ecc71;
+    background-color: #4CAF50;
     color: white;
 }
 .message.incorrect {
@@ -85,11 +140,11 @@ button[type="submit"]:hover {
     background-color: #3498db;
 }
 
-.dropdown-menu{
+/* .dropdown-menu{
     margin-top: 100px;
     display: flex;
     justify-content: center;
-}
+} */
 
 .redirect-button{
     background-color: black;
@@ -101,7 +156,7 @@ button[type="submit"]:hover {
 
 .correct {
     font-weight: bold;
-    background-color: green !important;
+    background-color: #4CAF50 !important;
 }
 .incorrect {
     font-weight: normal;
@@ -136,6 +191,43 @@ footer {
 .footer-container img {
     width: 30px;
     height: 30px;
-    margin-left: 10px;
     padding-right: 50px;
+}
+
+.dropdown-menu {
+    margin-top: 50px;
+    margin-bottom: 250px;
+    display: flex;
+    justify-content: center;
+    
+    box-sizing: border-box;
+}
+/* Vergrößern und Stylen der Drop-Down-Menüs */
+.dropdown-menu select {
+    width: 100%;
+    max-width: 300px; /* Maximale Breite der Drop-Down-Menüs */
+    padding: 10px; /* Innenabstand */
+    font-size: 24px; /* Schriftgröße */
+    border: 1px solid #ccc; /* Rahmen */
+    border-radius: 5px; /* Abgerundete Ecken */
+    margin-bottom: 10px; /* Abstand zwischen den Elementen */
+    box-sizing: border-box; /* Box-Modell anpassen */
+    text-align: center;
+}
+
+/* Button stylen */
+.dropdown-menu button {
+    padding: 10px 20px;
+    font-size: 24px;
+    max-width: 300px;
+    background-color: #4CAF50; /* Hintergrundfarbe */
+    color: white; /* Schriftfarbe */
+    border: none; /* Kein Rahmen */
+    border-radius: 12px; /* Abgerundete Ecken */
+    cursor: pointer; /* Zeiger ändern */
+}
+
+/* Button Hover-Effekt */
+.dropdown-menu button:hover {
+    background-color: #45a049; /* Hintergrundfarbe bei Hover */
 }
