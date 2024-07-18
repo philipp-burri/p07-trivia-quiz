@@ -13,6 +13,7 @@ if (!isset($_SESSION)) {
     <title>Quiz</title>
     <link rel="stylesheet" href="header.css">   
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="/assets/img/favicon-32x32.png">
 </head>
 
 <body>
