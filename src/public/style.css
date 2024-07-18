@@ -1,6 +1,6 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  
+    box-sizing: border-box;
     margin: 0 auto;
     
 }
@@ -140,11 +140,11 @@ button[type="submit"]:hover {
     background-color: #3498db;
 }
 
-.dropdown-menu{
+/* .dropdown-menu{
     margin-top: 100px;
     display: flex;
     justify-content: center;
-}
+} */
 
 .redirect-button{
     background-color: black;
@@ -177,4 +177,41 @@ footer {
     width: 30px;
     height: 30px;
     padding-right: 50px;
+}
+
+.dropdown-menu {
+    margin-top: 50px;
+    margin-bottom: 250px;
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+    
+}
+/* Vergrößern und Stylen der Drop-Down-Menüs */
+.dropdown-menu select {
+    width: 100%;
+    max-width: 300px; /* Maximale Breite der Drop-Down-Menüs */
+    padding: 10px; /* Innenabstand */
+    font-size: 24px; /* Schriftgröße */
+    border: 1px solid #ccc; /* Rahmen */
+    border-radius: 5px; /* Abgerundete Ecken */
+    margin-bottom: 10px; /* Abstand zwischen den Elementen */
+    box-sizing: border-box; /* Box-Modell anpassen */
+    
+}
+
+/* Button stylen */
+.dropdown-menu button {
+    padding: 10px 20px;
+    font-size: 24px;
+    background-color: #4CAF50; /* Hintergrundfarbe */
+    color: white; /* Schriftfarbe */
+    border: none; /* Kein Rahmen */
+    border-radius: 12px; /* Abgerundete Ecken */
+    cursor: pointer; /* Zeiger ändern */
+}
+
+/* Button Hover-Effekt */
+.dropdown-menu button:hover {
+    background-color: #45a049; /* Hintergrundfarbe bei Hover */
 }
