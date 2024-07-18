@@ -26,7 +26,6 @@ if (!isset($_SESSION)) {
 
     <form id="quizForm" method="post">
         <div class="answer-container">
-        <div class="answer-container">
             <?php foreach ($answer_keys as $key): ?>
                 <div class="answer">
                     
@@ -38,6 +37,8 @@ if (!isset($_SESSION)) {
         <input type="hidden" id= "correctAnswer" value="<?php echo $singlequestion['correct_answer']; ?>">
     </form>
 </div>
+
+<?php include '../utils/footer.php'; ?>
 
 
 
