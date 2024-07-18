@@ -13,13 +13,15 @@ h1 {
     margin-bottom: 30px;
 }
 .quiz-container {
-    margin-top: 200px;
+    margin: 200px auto 0;
     background-color: #ffffff;
     border-radius: 8px;
     padding: 20px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    margin-left: 500px;
-    margin-right: 500px;
+    max-width: 800px;
+    width: 90%;
+    height: 500px; /* Fixed height */
+    display: flex;
+    flex-direction: column;
 }
 .quiz-container1 {
     
@@ -38,7 +40,7 @@ h1 {
     background-color: #ffffff;
     border-radius: 8px;
     padding: 20px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+
     /* margin: 50px; */
     flex-wrap: wrap;
     /* margin-left: auto;
@@ -61,10 +63,9 @@ h1 {
     padding: 20px;
 }
 .question {
-    font-weight: bold;
-    font-size: 18px;
-    margin-bottom: 20px;
-    color: #2c3e50;
+    height: 150px; 
+    overflow-y: auto; 
+    
 }
 .btn {
     display: inline-block;
@@ -81,26 +82,46 @@ h1 {
 .btn:hover {
     background-color: #3498dbc7;
 }
-    .answer {
-    margin-bottom: 10px;
-    border-color: black;
-    border: solid 1px;
-    border-radius: 6px;
+.answer-container {
+    flex-grow: 1; /* Take up remaining space */
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two columns */
+    grid-template-rows: 1fr 1fr; /* Two rows */
+    gap: 10px; /* Space between grid items */
+}
 
+.question-title{
+    text-align: center;
+}
+
+.answer {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    border: 2px solid black;
+    border-radius: 6px;
+    overflow: hidden;
+}
+.answer:hover{
+    transform: scale(1.01);
 }
 .answer input[type="radio"] {
     display: none;
 }
 .answer label {
-    display: block;
-    padding: 10px 15px;
-   
-    border-radius: 4px;
+    
+    font-weight: 500;
+    flex-grow: 1;
+    padding: 20px;
     cursor: pointer;
     transition: background-color 0.3s;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
+
 .answer label:hover {
-    background-color: #d5dbdb;
+    background-color: #d5dbdbd7;
 }
 /* .answer input[type="radio"]:checked + label {
     background-color: #3498db;

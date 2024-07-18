@@ -20,7 +20,7 @@ if (!isset($_SESSION)) {
 <?php include '../utils/header.php' ?>
 <div class="quiz-container">
     <div class="question">
-        <h2><?php echo htmlspecialchars($questionText); ?></h2>
+        <h2 class="question-title"><?php echo htmlspecialchars($questionText); ?></h2>
     </div>
 
 
@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', function() {
             checkAnswer();
 
             // Formular absenden
-            setTimeout(() => form.submit(), 1100);
+            setTimeout(() => form.submit(), 500);
         });
     });
 
