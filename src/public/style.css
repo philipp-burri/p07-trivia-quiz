@@ -102,9 +102,9 @@ button[type="submit"]:hover {
 
 .correct {
     font-weight: bold;
-    background-color: green;
+    background-color: green !important;
 }
 .incorrect {
     font-weight: normal;
-    background-color: red;
+    background-color: red !important;
 }
