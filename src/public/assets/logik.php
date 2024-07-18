@@ -74,8 +74,15 @@ if (isset($_POST['answer'])) {
 
 if ($singlequestion) {
     $questionText = htmlspecialchars($singlequestion['question']);
-    $answerA = htmlspecialchars($singlequestion['answer_a']);
-    $answerB = htmlspecialchars($singlequestion['answer_b']);
-    $answerC = htmlspecialchars($singlequestion['answer_c']);
-    $answerD = htmlspecialchars($singlequestion['answer_d']);
+    $answers = [
+        'a' => htmlspecialchars($singlequestion['answer_a']),
+        'b' => htmlspecialchars($singlequestion['answer_b']),
+        'c' => htmlspecialchars($singlequestion['answer_c']),
+        'd' => htmlspecialchars($singlequestion['answer_d']),
+    ];
+
+    // Antworten mischen
+    $shuffled_answers = $answers;
+    $answer_keys = array_keys($shuffled_answers);
+    shuffle($answer_keys);
 }

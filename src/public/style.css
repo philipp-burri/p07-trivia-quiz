@@ -1,6 +1,5 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  
     margin: 0 auto;
     
 }
@@ -50,10 +49,10 @@ h1 {
 .answer label:hover {
     background-color: #d5dbdb;
 }
-.answer input[type="radio"]:checked + label {
+/* .answer input[type="radio"]:checked + label {
     background-color: #3498db;
     color: white;
-}
+} */
 .message {
     margin-top: 20px;
     font-weight: bold;
@@ -99,15 +98,30 @@ button[type="submit"]:hover {
     padding: 20px;
     font-size: 24px;
 }
+
+.correct {
+    font-weight: bold;
+    background-color: green !important;
+}
+.incorrect {
+    font-weight: normal;
+    background-color: red !important;
+}
+
 footer {
     flex-direction: row;
-    margin-top: 600px;
-    background-color: #3498db;
+    flex: 1;
+    position: absolute;
+    bottom: 0;
+    background-color: #2980b9;
+    min-width: 100vw;
+    min-height: 5vh;
     color: white; 
-    
+
 }
 
 .footer-container {
+    flex: 1;
     display: flex;
     justify-content: space-between;
     align-items: center;
