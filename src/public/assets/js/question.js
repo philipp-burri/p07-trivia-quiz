@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
             checkAnswer();
 
             // Formular absenden
-            setTimeout(() => form.submit(), 1100);
+            setTimeout(() => form.submit(), 500);
         });
     });
 

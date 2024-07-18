@@ -23,12 +23,12 @@ session_unset();
 
 <?php include '../utils/header.php' ?>
 
-<div style="margin-top: 150px; font-size: 40px;">
+<div style="margin-top: 125px; font-size: 40px;">
     <h1 class="index-title">Trivia Quiz</h1>
 </div>
 <div class="dropdown-menu">
 <form action="assets/logik.php" method="post">
-        <label for="categories"><p class= "index-label">Auswahl Thema:<p></label><br>
+        <label for="categories"><p class= "index-label">Auswahl Thema:</p></label><br>
         <select id="categories" name="categories">
             <option value="mixed">Alle Kategorien</option>
             <option value="animals">Tiere</option>
@@ -38,7 +38,7 @@ session_unset();
 
         </select>
 
-        <label class="index-label" for="amount"><p class= "index-label">Anzahl Fragen:</p></label><br>
+        <label class="index-label" for="amount"><p class= "index-label index-label2">Anzahl Fragen:</p></label><br>
         <select id="amount" name="amount">
             <option value="5">5</option>
             <option value="10">10</option>

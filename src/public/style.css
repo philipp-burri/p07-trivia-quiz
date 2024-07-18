@@ -8,6 +8,8 @@ display: none;
 
 }
 
+
+
 html{
     height: 100%;
 }
@@ -41,7 +43,10 @@ h1 {
     font-size: 20px;
     margin: 0;
     text-align: center;
+}
 
+.index-label2{
+    margin-top: 20px;
 }
 .quiz-container {
     margin: 200px auto 0;
