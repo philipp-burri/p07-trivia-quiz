@@ -33,6 +33,7 @@ if ($ratio >= 0 && $ratio < 0.3333) {
     <title>Quiz Resultat</title>
     <link rel="stylesheet" href="header.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="/assets/img/favicon-32x32.png">
 </head>
 <body>
 <?php include '../utils/header.php' ?>
