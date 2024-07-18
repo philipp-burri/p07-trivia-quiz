@@ -5,7 +5,6 @@ if (!isset($_SESSION)) {
 }
 
 session_unset();
-
 ?>
 
 <!DOCTYPE html>

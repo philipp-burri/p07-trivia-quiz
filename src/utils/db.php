@@ -2,14 +2,6 @@
 if (!isset($_SESSION)) {
     session_start();
 }
-function prettyPrint($a){
-    echo '<pre>';
-    print_r($a);
-    echo '</pre>';
-}
-
-/* prettyPrint($_POST['categories']); */
-
 
 $db_host = getenv("DB_HOST");
 $db_name = getenv("DB_NAME");
