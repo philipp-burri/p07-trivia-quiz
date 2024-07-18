@@ -31,26 +31,59 @@ if (!isset($_SESSION)) {
                 <div class="answer">
                     
                     <input type="radio" name="answer" id="answer<?php echo strtoupper($key); ?>" value="<?php echo $key; ?>" required>
-                    <label for="answer<?php echo strtoupper($key); ?>"><?php echo htmlspecialchars($shuffled_answers[$key]); ?></label>
-
+                    <label id="label<?php echo strtoupper($key); ?>" for="answer<?php echo strtoupper($key); ?>"><?php echo htmlspecialchars($shuffled_answers[$key]); ?></label>
                 </div>
             <?php endforeach; ?>    
         </div>
+        <input type="hidden" id= "correctAnswer" value="<?php echo $singlequestion['correct_answer']; ?>">
     </form>
 </div>
 
 
+
 <script>
-    // alle radio buttons werden im Formular ausgewählt.
+
 document.addEventListener('DOMContentLoaded', function() {
     const form = document.getElementById('quizForm');
     const radioButtons = form.querySelectorAll('input[type="radio"]');
-    // change event listener wird hinzugefügt, formular wird automatisch abgesendet wenn antwort ausgewählt wird.
+    
     radioButtons.forEach(function(radio) {
         radio.addEventListener('change', function() {
-            form.submit();
+            // Funktion zur Überprüfung der Antwort aufrufen
+            checkAnswer();
+
+            // Formular absenden
+            setTimeout(() => form.submit(), 1100);
         });
     });
+
+    function checkAnswer() {
+        const selectedAnswer = document.querySelector('input[name="answer"]:checked');
+        
+        if (selectedAnswer) {
+            const selectedValue = selectedAnswer.value; // Wert des ausgewählten Radio-Buttons
+            
+            // Wert der korrekten Antwort aus einem versteckten Input-Feld
+            const correctAnswer = document.getElementById('correctAnswer').value;
+            
+            // Selektiere das Label, das mit dem ausgewählten Radio-Button verknüpft ist
+            const labelForSelected = document.querySelector(`label[for="${selectedAnswer.id}"]`);
+
+            // Überprüfe, ob das Label gefunden wurde
+            if (labelForSelected) {
+                // Vergleiche den Wert des ausgewählten Radio-Buttons mit dem korrekten Wert
+                if (selectedValue === correctAnswer) {
+                    labelForSelected.classList.add('correct');
+                    labelForSelected.classList.remove('incorrect');
+                } else {
+                    labelForSelected.classList.add('incorrect');
+                    labelForSelected.classList.remove('correct');
+                }
+            }
+        } else {
+            console.log('Kein Radio-Button ausgewählt.');
+        }
+    }
 });
 </script>
 </body>

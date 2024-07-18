@@ -50,10 +50,10 @@ h1 {
 .answer label:hover {
     background-color: #d5dbdb;
 }
-.answer input[type="radio"]:checked + label {
+/* .answer input[type="radio"]:checked + label {
     background-color: #3498db;
     color: white;
-}
+} */
 .message {
     margin-top: 20px;
     font-weight: bold;
@@ -98,4 +98,13 @@ button[type="submit"]:hover {
     color: white;
     padding: 20px;
     font-size: 24px;
+}
+
+.correct {
+    font-weight: bold;
+    background-color: green;
+}
+.incorrect {
+    font-weight: normal;
+    background-color: red;
 }

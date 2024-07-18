@@ -57,6 +57,7 @@ if (isset($_POST['answer'])) {
     }
     
     if ($_SESSION['questionIndex'] <= 8){
+       /* sleep(1); */ 
     $_SESSION['questionIndex'] ++;     
     }else{
         header("Location: ../result.php");
