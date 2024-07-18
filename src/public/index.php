@@ -29,17 +29,17 @@ session_unset();
 </div>
 <div class="dropdown-menu">
 <form action="assets/logik.php" method="post">
-        <label class="index-label" for="categories">Auswahl Thema:</label><br>
+        <label for="categories"><p class= "index-label">Auswahl Thema:<p></label><br>
         <select id="categories" name="categories">
-            <option value="mixed">All Categories</option>
-            <option value="animals">Animals</option>
-            <option value="football">Football</option>
-            <option value="geography">Geography</option>            
-            <option value="history">History</option>
+            <option value="mixed">Alle Kategorien</option>
+            <option value="animals">Tiere</option>
+            <option value="football">Fussball</option>
+            <option value="geography">Geographie</option>            
+            <option value="history">Geschichte</option>
 
         </select>
 
-        <label class="index-label" for="amount">Anzahl Fragen:</label><br>
+        <label class="index-label" for="amount"><p class= "index-label">Anzahl Fragen:</p></label><br>
         <select id="amount" name="amount">
             <option value="5">5</option>
             <option value="10">10</option>

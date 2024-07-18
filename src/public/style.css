@@ -1,7 +1,11 @@
 @media screen and (max-width: 767px) {
 .index-title{
-    margin-top: 0px;
-}
+display: none;
+    }
+    .index-label{
+        text-align: center;
+    }
+
 }
 
 html{
@@ -29,9 +33,15 @@ h1 {
     text-align: center;
     margin-bottom: 30px;
 }
+/* 
+.index-title{
+    display: none;
+        } */
 .index-label{
-
     font-size: 20px;
+    margin: 0;
+    text-align: center;
+
 }
 .quiz-container {
     margin: 200px auto 0;
