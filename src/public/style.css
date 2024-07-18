@@ -1,6 +1,6 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    box-sizing: border-box;
+    
     margin: 0 auto;
     
 }
@@ -184,8 +184,8 @@ footer {
     margin-bottom: 250px;
     display: flex;
     justify-content: center;
-    box-sizing: border-box;
     
+    box-sizing: border-box;
 }
 /* Vergrößern und Stylen der Drop-Down-Menüs */
 .dropdown-menu select {
@@ -197,13 +197,14 @@ footer {
     border-radius: 5px; /* Abgerundete Ecken */
     margin-bottom: 10px; /* Abstand zwischen den Elementen */
     box-sizing: border-box; /* Box-Modell anpassen */
-    
+    text-align: center;
 }
 
 /* Button stylen */
 .dropdown-menu button {
     padding: 10px 20px;
     font-size: 24px;
+    max-width: 300px;
     background-color: #4CAF50; /* Hintergrundfarbe */
     color: white; /* Schriftfarbe */
     border: none; /* Kein Rahmen */

@@ -31,7 +31,7 @@ session_unset();
 <form action="assets/logik.php" method="post">
         <label for="">Auswahl Thema:</label><br>
         <select id="categories" name="categories">
-            <option value="mixed">All Questions</option>
+            <option value="mixed">All Categories</option>
             <option value="animals">Animals</option>
             <option value="football">Football</option>
             <option value="geography">Geography</option>            
@@ -44,6 +44,7 @@ session_unset();
             <option value="5">5</option>
             <option value="10">10</option>
             <option value="15">15</option>
+            <option value="20">20</option>
         </select>
 
         <button type="submit">Starten</button>
