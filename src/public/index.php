@@ -29,7 +29,7 @@ session_unset();
 </div>
 <div class="dropdown-menu">
 <form action="assets/logik.php" method="post">
-        <label for="">Auswahl Thema:</label><br>
+        <label for="categories">Auswahl Thema:</label><br>
         <select id="categories" name="categories">
             <option value="mixed">All Categories</option>
             <option value="animals">Animals</option>
@@ -39,7 +39,7 @@ session_unset();
 
         </select>
 
-        <label for="">Anzahl Fragen:</label><br>
+        <label for="amount">Anzahl Fragen:</label><br>
         <select id="amount" name="amount">
             <option value="5">5</option>
             <option value="10">10</option>

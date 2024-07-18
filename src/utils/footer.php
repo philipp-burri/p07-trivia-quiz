@@ -8,10 +8,13 @@
         </div>
     
         <div>
-            (C) 2024 Developer Akademie Zürich
+        &#169 2024 Developer Akademie Zürich
         </div>
 
-        <div>
+        <div class="footer-socials">
+            <a href="https://github.com/philipp-burri/p07-trivia-quiz" target="_blank">
+                <img src="/assets/img/github-color.svg" alt="GitHub">
+            </a>
             <a href="https://www.instagram.com/" target="_blank">
                 <img src="/assets/img/instas.jpeg" alt="Instagram">
             </a>
