@@ -18,6 +18,7 @@ if (!isset($_SESSION)) {
 
 <body>
 <?php include '../utils/header.php' ?>
+<div class="main-content">;
 <div class="quiz-container">
     <div class="question">
         <h2 class="question-title"><?php echo htmlspecialchars($questionText); ?></h2>
@@ -36,6 +37,7 @@ if (!isset($_SESSION)) {
         </div>
         <input type="hidden" id= "correctAnswer" value="<?php echo $singlequestion['correct_answer']; ?>">
     </form>
+</div>
 </div>
 
 <?php include '../utils/footer.php'; ?>
