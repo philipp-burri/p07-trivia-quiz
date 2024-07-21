@@ -6,11 +6,12 @@ if (!isset($_SESSION)) {
 
 function questioenIdandIndex($type, $amount, $dbConnection){
     // Falls noch keine QuestionId in der Session existiert wird diese aus der DB ausgelesen (und in ein eindimensionales Array gewandelt) und in der Session hinterlegt
+
 if (!isset($_SESSION['questionIds'])){
     if ($type != 'mixed'){
     $query = "SELECT id FROM questions WHERE type = '$type' ORDER BY RAND() LIMIT $amount";
     }else{
-    $query = "SELECT id FROM questions ORDER BY RAND() LIMIT $amount";
+    $query = "SELECT id FROM questions WHERE type != 'fail' ORDER BY RAND() LIMIT $amount";
     }
                 $stmt = $dbConnection->prepare($query);
                 $stmt->execute();
@@ -34,13 +35,14 @@ return ['questionIndex' => $questionIndex,
 }
 
 function singlequestionID($questionId, $dbConnection){
+    if ($questionId != null){
 $query = "SELECT * FROM questions WHERE id = $questionId";
 $stmt = $dbConnection->prepare($query);
 $stmt->execute();
 $singlequestion = $stmt->fetch(PDO::FETCH_ASSOC);
 return $singlequestion;
 }
-
+}
 
 function setPoints(){
 if (!isset($_SESSION['points'])) {
@@ -122,3 +124,72 @@ function calculatAndSetResult($amount, $points){
         'result_text' => $result_text
     ];
 }
+
+
+function questionTemplate($questionText, $answer_keys, $shuffled_answers, $singlequestion){
+    echo 
+    '<div class="quiz-container">
+        <div class="question">
+            <h2 class="question-title">' . htmlspecialchars($questionText) . '</h2>
+        </div>
+        <form id="quizForm" method="post">
+            <div class="answer-container">';
+                    foreach ($answer_keys as $key) {
+                        echo 
+                        '<div class="answer">
+                            <input  type="radio" 
+                                    name="answer" 
+                                    id="answer' . strtoupper($key) . '" 
+                                    value="' . $key . '" required>
+                            <label  id="label' . strtoupper($key) . '" 
+                                    for="answer' . strtoupper($key) . '"
+                                    >' . htmlspecialchars($shuffled_answers[$key]) . '</label>
+                        </div>';
+                    }
+    echo 
+            '</div>
+            <input  type="hidden" 
+                    id="correctAnswer" 
+                    value="' . $singlequestion['correct_answer'] . '">
+        </form>
+    </div>';
+}
+
+function resultPage($points, $amount, $result_image, $result_text){
+    echo '
+    <div class="quiz-container1">
+        <h1>Quiz Resultat</h1>
+        <br>
+        <h3>Dein Ergebnis</h3>
+        <h5>' . $points . ' von ' . $amount . ' möglichen Punkten</h5>
+    </div>
+    
+    <div class="quiz-container2">
+        <img src="' . $result_image . '" alt="Ergebnis">
+        <div class="quiz-container4">
+            <h4>' . $result_text . '</h4>
+            <a href="index.php" class="btn">Noch einmal versuchen</a>
+        </div>
+    </div>';
+}
+
+function failMessage(){
+    echo '  <h1>
+                OOOPS! Da ist wohl etwas schief gelaufen
+            </h1>
+            <p  style="position: absolute; 
+                top: 30%; left: 50%; 
+                transform: translate(-50%, -50%); 
+                text-align: center;">
+                Bitte gehe zurück auf die Startseite und beginne das Quiz von vorn
+            </p>
+            <img    src="/assets/img/traurig.jpeg" 
+                    alt="emoji traurig" 
+                    style="position: absolute; 
+                    top: 65%; left: 50%; 
+                    transform: translate(-50%, -50%);">';
+}
+
+
+
+
