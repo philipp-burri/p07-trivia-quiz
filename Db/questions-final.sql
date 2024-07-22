@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: mysql
--- Generation Time: Jul 16, 2024 at 09:53 AM
+-- Generation Time: Jul 21, 2024 at 05:28 PM
 -- Server version: 9.0.0
 -- PHP Version: 8.2.8
 
@@ -122,7 +122,8 @@ INSERT INTO `questions` (`id`, `question`, `type`, `answer_a`, `answer_b`, `answ
 (316, 'Wer erzielte das erste Tor der Schweiz bei der UEFA Euro 2020?', 'football', 'Granit Xhaka', 'Breel Embolo', 'Mario Gavranovic', 'Remo Freuler', 'b'),
 (317, 'Gegen welche Mannschaft verlor die Schweiz im Viertelfinale der UEFA Euro 2020, nachdem das Spiel nach 120 Minuten 1:1 endete und im Elfmeterschießen entschieden wurde?', 'football', 'Spanien', 'Italien', 'England', 'Deutschland', 'a'),
 (318, 'Gegen welche Mannschaft verlor die Schweiz im Achtelfinale der FIFA Weltmeisterschaft 2006 in Deutschland?', 'football', 'Deutschland', 'Ukraine', 'Holland', 'Frankreich', 'b'),
-(319, 'Wer ist der aktuelle Trainer der Schweizer Nationalmannschaft?', 'football', 'Hakan Yakin', 'Murat Yakin', 'Gökan Yakin', 'Türklimatz Yakin', 'b');
+(319, 'Wer ist der aktuelle Trainer der Schweizer Nationalmannschaft?', 'football', 'Hakan Yakin', 'Murat Yakin', 'Gökan Yakin', 'Türklimatz Yakin', 'b'),
+(320, 'fail', 'fail', 'fail', 'fail', 'fail', 'fail', 'f');
 
 --
 -- Indexes for dumped tables
@@ -142,7 +143,7 @@ ALTER TABLE `questions`
 -- AUTO_INCREMENT for table `questions`
 --
 ALTER TABLE `questions`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=320;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=321;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
