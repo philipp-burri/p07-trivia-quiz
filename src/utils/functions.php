@@ -174,15 +174,19 @@ function resultPage($points, $amount, $result_image, $result_text){
 }
 
 function failMessage(){
-    echo '  <h1>
-                OOOPS! Da ist wohl etwas schief gelaufen
-            </h1>
-            <p  style="position: absolute; 
-                top: 30%; left: 50%; 
-                transform: translate(-50%, -50%); 
-                text-align: center;">
-                Bitte gehe zurück auf die Startseite und beginne das Quiz von vorn
-            </p>
+    echo '  <div>
+                <h1 style="position: absolute; 
+                    top: 20%; left: 50%; 
+                    transform: translate(-50%, -50%);">
+                    OOOPS! Da ist wohl etwas schief gelaufen
+                </h1>
+                <p  style="position: absolute; 
+                    top: 40%; left: 50%; 
+                    transform: translate(-50%, -50%); 
+                    text-align: center;">
+                    Bitte gehe zurück auf die Startseite und beginne das Quiz von vorn
+                </p>
+            </div>
             <img    src="/assets/img/traurig.jpeg" 
                     alt="emoji traurig" 
                     style="position: absolute; 
